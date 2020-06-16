@@ -3,6 +3,46 @@
 {
 	"version": "0.1.0",
 	"configurations": [
+		
+
+
+
+
+		{
+			"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+			"contentVersion": "1.0.0.0",
+			"parameters": {},
+			"functions": [],
+			"variables": {},
+			"resources": [],
+			"outputs": {}
+		}
+		A
+	command
+		{
+			"name": "Attach to Kubernetes Pod (Go)",
+			"type": "cloudcode.kubernetes",
+			"request": "attach",
+			"language": "Go",
+			"debugPort": 2345,
+			"podSelector": {
+				"app": "deployment-name"
+			},
+			"localRoot": "${workspaceFolder}",
+			"remoteRoot": "Path to the Remote Directory Containing the Program"
+		},
+		{
+			"name": ".NET Core Attach",
+			"type": "coreclr",
+			"request": "attach",
+			"processId": "${command:pickRemoteProcess}",
+			"pipeTransport": {
+				"pipeCwd": "${workspaceFolder}",
+				"pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
+				"pipeArgs": [],
+				"debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
+			}
+		},
 		{
 			"name": "Launch Extension",
 			"type": "extensionHost",
